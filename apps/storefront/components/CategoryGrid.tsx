@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { categories } from "@/data/categories";
+import { categories, accentHex } from "@/data/categories";
 
 const spans: Record<string, string> = {
   femmes: "md:col-span-7 md:row-span-2",
@@ -37,6 +37,11 @@ export default function CategoryGrid() {
             </div>
             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
               <div>
+                <span
+                  className="mb-2 inline-block h-1.5 w-8 rounded-full"
+                  style={{ backgroundColor: accentHex[category.accent] }}
+                  aria-hidden="true"
+                />
                 <h3 className="font-display text-2xl text-paper">
                   {category.label}
                 </h3>
