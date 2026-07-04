@@ -11,6 +11,13 @@ const infoLinks = [
   { label: "Paiement", href: "/paiement" },
 ];
 
+const legalLinks = [
+  { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "Conditions générales de vente", href: "/cgv" },
+  { label: "Politique de confidentialité", href: "/confidentialite" },
+  { label: "Politique de retour", href: "/retours" },
+];
+
 const socialLinks = [
   { label: "Instagram", href: "https://instagram.com" },
   { label: "Facebook", href: "https://facebook.com" },
@@ -90,7 +97,7 @@ export default function Footer() {
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-paper/70">
             {socialLinks.map((link) => (
               <li key={link.href}>
-                <a
+                
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
@@ -113,13 +120,13 @@ export default function Footer() {
             boutique d&apos;applications.
           </p>
           <div className="mt-5 flex flex-wrap gap-4">
-            <a
+            
               href="/app/yedei-android.apk"
               className="border border-paper/40 px-6 py-3 text-xs uppercase tracking-widest2 transition-colors hover:bg-paper hover:text-ink"
             >
               Télécharger sur Android
             </a>
-            <a
+            
               href="/installation-iphone"
               className="border border-paper/40 px-6 py-3 text-xs uppercase tracking-widest2 transition-colors hover:bg-paper hover:text-ink"
             >
@@ -128,7 +135,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-12 text-xs text-paper/40">
+        {/* Pages légales */}
+        <div className="mt-10 border-t border-paper/15 pt-8">
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-paper/50">
+            {legalLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="hover:text-paper/80">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="mt-6 text-xs text-paper/40">
           © {new Date().getFullYear()} YEDEI. Tous droits réservés.
         </p>
       </div>
